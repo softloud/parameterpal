@@ -1,0 +1,31 @@
+Package: parameterpal
+Title: Intepretable parameters for the beta distribution
+Version: 0.0.0.9000
+Authors@R: c(
+    person(given = "Charles",
+           family = "Gray",
+           role = c("aut", "cre"),
+           email = "charlestigray@gmail.com",
+           comment = c(ORCID = "0000-0002-9978-011X")),
+    person(given = "Hien",
+           family = "Nguyen",
+           role = "aut"),
+    person(given = "Matthew",
+           family = "Grainger",
+           role = "aut"))
+Description: From the measure we expect, how much we expect yea much of the measure falling within, we interpret beta distribution parameters. 
+License: MIT + file LICENSE
+Encoding: UTF-8
+LazyData: true
+Roxygen: list(markdown = TRUE)
+RoxygenNote: 7.1.1
+Suggests: 
+    knitr,
+    rmarkdown,
+    testthat
+VignetteBuilder: knitr
+Imports: 
+    magrittr,
+    tibble,
+    ggplot2,
+    stringr

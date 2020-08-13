@@ -1,0 +1,145 @@
+---
+title: "obtaining beta parameters from interpretable conditions"
+author: "Charles T. Gray"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndeXEntry{betapal}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.width = 5
+)
+```
+
+```{r setup}
+library(parameterpal)
+```
+
+# motivation
+
+Rather than knowing intrinsically what parameters are required for a distribution, scientists tend to have a sense of what value they *expect* a measure to take, *how many* observations should fall *within* a certain distance of that value. 
+
+For the normal distribution, obtaining the parameters from these assmptions is straightforward. The expected value and variance, which is to say, centre and spread, of the normal distribution, are both easily interpretable and translate directly to the parameters required for the distribution. So,  to sample three values from a normal distribution where we expect a value of 50 with two-thirds of values falling within 0.2 of 0.5, we simply run the following code.
+
+```{r}
+rnorm(n = 3, 
+      mean = 0.5,
+      sd = 0.2)
+
+```
+
+
+But if we wished to sample from beta distribution, however, the parameters, `shape1` and `shape2`, are not readily interpretable from expected value and variance. `parameterpal::` provides a means of obtaining the parameters required  for the beta distribution from interpretable conditions. 
+
+### original application
+
+This code was developed for `softloud/simeta::` research software that supported `softloud`'s dissertation. 
+
+In this case, given a population $N$, what proportion are allocated to the case and control groups? A desire to reflect the uncertainty of designed eXperiments motivated this code. 
+
+For eXample, even if case and control groups were assignned evenly, in experimental science there are many reasons individuals may drop out of the groups. Thus a proportion of $N$ was sampled from a beta distribution (which is bounded between 0 and 1, as proportions are, too), with an intuition of how many drop outs are anticipated.
+
+# using `parameterpal::` 
+
+Suppose we expect a value of 0.3, with 80 per cent of observations falling within a distance of 0.2 from 0.3. That is, we expect 90 per cent of observations to fall within (0.1, 0.5). Assuming data follow a beta distribution, what are its parameters? 
+
+```{r}
+beta_pal(expected_value = 0.3,
+         this_much = 0.8,
+         within = 0.2)
+
+```
+
+We can plot this intuition to see the shape of the resulting beta distribution.
+
+```{r }
+beta_plot(
+  expected_value = 0.3,
+         this_much = 0.8,
+         within = 0.2
+)
+
+```
+
+Escaping the ubiquitous tyranny of the arbitary bounds 90 or 95 per cent, which don't necessarily reflect our intuituion, suppose we thought only 30 per cent of values fall within the interval. 
+
+```{r }
+beta_plot(
+  expected_value = 0.3,
+         this_much = 0.3,
+         within = 0.2
+)
+
+```
+
+
+# interpretability
+
+The first parameter is the expected value, and the second, the variance. For the normal distribution, the standard deviation is interpretable. We know two-thirds of values fall within one standard deviation of the mean. If we shade this area in a visualisation, it's convincing that two-thirds of values fall within this range.
+
+```{r}
+expected_value <- 0.5
+within <- 0.2
+
+library(ggplot2)
+
+ggplot() +
+  xlim(0, 1) +
+  # why is the shaded area not showing up?
+     geom_rect(
+      Xmin = expected_value - within,
+      XmaX = expected_value + within,
+      ymin = 0,
+      ymaX = Inf,
+      alpha = 0.2
+    ) +
+stat_function(
+  fun = dnorm,
+  args = list(mean = expected_value, sd = within)
+)
+
+
+```
+
+The beta distribution, on the other hand, requires two shape parameters, `shape1` and `shape2`, which do not immediately reflect our intuition of what value we expect the measure to take, nor how much variance we expect.
+
+# derivation 
+
+> By all means, check my mathematics! 
+
+We assume the $X$ follows a beta distribution, that is, $X \sim \textrm{beta}(\alpha, \beta)$, with expected value, $E(X) = \tilde X$, and a proportion of $\gamma$ of $X$ falling within $\tau$ of $X$. 
+
+Then, Chebyshev's inequality provides
+$$
+P(|X - \tilde X| \geqslant \tau) \leqslant 1/k^2 = 1 - \gamma
+$$
+where $\tau = k\sigma$, and $\sigma$ denotes the standard deviation of $X$, and $k > 0$ (see, for eXample, Bain and Engelhardt's *Introduction to Probability and Mathematical Statistics*, 1992). 
+
+The righthand side of the inequality is given in terms of $k$, so we have $k^{-2}=1-\gamma$. Combining this with $\tau = k \sigma$ gives
+$$
+\sigma^2 = \tau^2(1-\gamma).
+$$
+
+We now apply these assumptions to the definitions of the mean and variance of the beta distribution to obtain the parameters from interpretable conditions.
+
+Since $X \sim \mathrm{beta}(\alpha, \beta)$, we have 
+$$
+\tilde X = \frac {\alpha}{\alpha + \beta} \implies \beta = \alpha / \tilde X - \alpha.
+$$
+and, to find $\alpha$, we combine this with the variance, $\sigma^2$,
+\[
+\begin{array}{rrclc}
+& \sigma^2  & = & \frac{\alpha\beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)} & \\
+\implies & \sigma^2 & = & \frac{\alpha(\alpha/\tilde X -  \alpha)}{(\alpha + \alpha/\tilde X - \alpha)^2(\alpha + \alpha / \tilde X - \alpha + 1)}& \text{as } \beta  = \alpha / \tilde X - \alpha\\
+\implies & \tau^2 (1 - \gamma) & = & \frac{\alpha^2(1/\tilde X - 1)}{\alpha^2/\tilde X^2(\alpha/\tilde X + 1)}& \text{as } \sigma^2 = \tau^2(1-\gamma)\\
+\implies & \alpha / \tilde X + 1 & = & \frac{\tilde X^2(1/\tilde X - 1)}{\tau^2(1 - \gamma)}&\\
+\implies & \alpha &=& \tilde X \left [ \frac{\tilde X^2 (1 / \overline X - 1)}{\tau^2(1 - \gamma)} - 1]\right]&,
+\end{array}
+\]
+
