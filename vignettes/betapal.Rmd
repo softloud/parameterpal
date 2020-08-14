@@ -55,30 +55,26 @@ Suppose we expect a value of 0.3, with 80 per cent of observations falling withi
 
 ```{r}
 beta_pal(expected_value = 0.3,
-         this_much = 0.8,
-         within = 0.2)
+         within = 0.2,
+         this_much = 0.8)
 
 ```
 
 We can plot this intuition to see the shape of the resulting beta distribution.
 
 ```{r }
-beta_plot(
-  expected_value = 0.3,
-         this_much = 0.8,
-         within = 0.2
-)
+beta_plot(expected_value = 0.3,
+          within = 0.2,
+          this_much = 0.8)
 
 ```
 
 Escaping the ubiquitous tyranny of the arbitary bounds 90 or 95 per cent, which don't necessarily reflect our intuituion, suppose we thought only 30 per cent of values fall within the interval. 
 
 ```{r }
-beta_plot(
-  expected_value = 0.3,
-         this_much = 0.3,
-         within = 0.2
-)
+beta_plot(expected_value = 0.3,
+          within = 0.2,
+          this_much = 0.3)
 
 ```
 
