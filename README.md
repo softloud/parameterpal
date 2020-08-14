@@ -49,8 +49,8 @@ beta distribution, what are its parameters?
 ``` r
 
 beta_pal(expected_value = 0.3,
-         this_much = 0.8,
-         within = 0.2)
+          within = 0.2,
+          this_much = 0.8)
 #> $shape1
 #> [1] 7.575
 #> 
@@ -63,8 +63,8 @@ distribution.
 
 ``` r
 beta_plot(expected_value = 0.3,
-          this_much = 0.8,
-          within = 0.2)
+          within = 0.2,
+          this_much = 0.8)
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
@@ -75,8 +75,8 @@ only 30 per cent of values fall within the interval.
 
 ``` r
 beta_plot(expected_value = 0.3,
-          this_much = 0.3,
-          within = 0.2)
+          within = 0.2,
+          this_much = 0.8)
 ```
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />

@@ -27,9 +27,9 @@ library(parameterpal)
 
 # motivation
 
-Rather than knowing intrinsically what parameters are required for a distribution, scientists tend to have a sense of what value they *expect* a measure to take, *how many* observations should fall *within* a certain distance of that value. 
+Rather than knowing intrinsically what parameters are required for a distribution, scientists tend to have indirect knowledge. A researcher may have a  sense of what value they *expect* a measure to take, *how many* observations should fall *within* a certain distance of that value. As well as the overall shape of the data, the distribution. Distributions are not defined in the intuitive terms the scientist has, but equational parameters commonly (but not always) $\mu$ and $\sigma$ for the normal distribution, $\lambda$ for the exponential, and $\alpha$ and $\beta$ for the beta d 
 
-For the normal distribution, obtaining the parameters from these assmptions is straightforward. The expected value and variance, which is to say, centre and spread, of the normal distribution, are both easily interpretable and translate directly to the parameters required for the distribution. So,  to sample three values from a normal distribution where we expect a value of 50 with two-thirds of values falling within 0.2 of 0.5, we simply run the following code.
+For the normal distribution, obtaining the parameters from these assmptions is straightforward. The expected value and variance, which is to say, centre and spread, of the normal distribution, are both easily interpretable and translate directly to the parameters required for the distribution. So,  to sample three values from a normal distribution where we expect a value of 0.5 with two-thirds of values falling within 0.2 of 0.5, we simply run the following code.
 
 ```{r}
 rnorm(n = 3, 

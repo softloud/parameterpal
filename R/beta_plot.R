@@ -11,11 +11,14 @@
 
 beta_plot <- function(
   expected_value,
-  this_much,
   within,
+  this_much = 0.95,
   caption_width = 70) {
   # calculate parameters
-  par <- beta_pal(expected_value, this_much, within)
+  par <-
+    beta_pal(expected_value = expected_value,
+             within = within,
+             this_much = this_much)
 
   # return plot of beta distribution with parameters
   tibble::tibble(x = c(0, 1)) %>%
@@ -36,7 +39,9 @@ beta_plot <- function(
       args = list(shape1 = par$shape1, shape2 = par$shape2)
     ) +
     ggplot2::labs(
-      title = "beta distribution",
+      title = paste0("beta(",
+                     round(par$shape1, 1), ", ",
+                     round(par$shape2, 1), ")"),
       y = NULL,
       x = NULL,
       caption = stringr::str_wrap(
@@ -52,7 +57,7 @@ beta_plot <- function(
           expected_value - within,
           ",",
           expected_value + within,
-          "], shown by the shaded region."
+          "], shown by the shaded region. Parameters in title are rounded."
         ),
         width = caption_width
       )

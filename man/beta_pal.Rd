@@ -4,14 +4,15 @@
 \alias{beta_pal}
 \title{Beta parameters from interpretable conditions}
 \usage{
-beta_pal(expected_value, this_much, within)
+beta_pal(expected_value, within, this_much = 0.95)
 }
 \arguments{
 \item{expected_value}{Expected value of beta distrbution from [0,1].}
 
-\item{this_much}{What proportion falls \code{within} the specified interval.}
-
 \item{within}{Specify distance \code{this_much} falls within.}
+
+\item{this_much}{What proportion falls \code{within} the specified interval.
+Defaults to 0.95.}
 }
 \value{
 List of parameters appropriate for \link{rbeta} family of functions.

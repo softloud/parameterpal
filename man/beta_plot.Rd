@@ -4,14 +4,15 @@
 \alias{beta_plot}
 \title{plot the distribution of the proportion allocated to the intervention group}
 \usage{
-beta_plot(expected_value, this_much, within, caption_width = 70)
+beta_plot(expected_value, within, this_much = 0.95, caption_width = 70)
 }
 \arguments{
 \item{expected_value}{Expected value of beta distrbution from [0,1].}
 
-\item{this_much}{What proportion falls \code{within} the specified interval.}
-
 \item{within}{Specify distance \code{this_much} falls within.}
+
+\item{this_much}{What proportion falls \code{within} the specified interval.
+Defaults to 0.95.}
 
 \item{caption_width}{Option to control the width of the caption, defaults to
 70.}
