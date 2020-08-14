@@ -14,7 +14,7 @@ a certain distance of that value.
 
 For the normal distribution, this is straightforward, as the parameters
 reflect the expected value and variance. However, for the beta
-distribtuion, the parameters are not so readily interpretable.
+distribution, the parameters are not so readily interpretable.
 
 `parameterpal::` provides a means of obtaining the parameters required
 for the beta distribution from interpretable conditions.

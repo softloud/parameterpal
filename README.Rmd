@@ -21,7 +21,7 @@ knitr::opts_chunk$set(
 
 Rather than knowing intrinsically what parameters are required for a distribution, scientists tend to have a sense of what value they *expect* a measure to take, *how many* observations should fall *within* a certain distance of that value. 
 
-For the normal distribution, this is straightforward, as the parameters reflect the expected value and variance. However, for the beta distribtuion, the parameters are not so readily interpretable. 
+For the normal distribution, this is straightforward, as the parameters reflect the expected value and variance. However, for the beta distribution, the parameters are not so readily interpretable. 
 
 `parameterpal::` provides a means of obtaining the parameters required  for the beta distribution from interpretable conditions. 
 
