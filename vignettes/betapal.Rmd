@@ -1,10 +1,10 @@
 ---
-title: "obtaining beta parameters from interpretable conditions"
+title: "Obtain beta parameters from interpretable conditions."
 author: "Charles T. Gray"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette
 vignette: >
-  %\VignetteIndeXEntry{betapal}
+  %\VignetteIndexEntry{betapal}
   %\VignetteEngine{knitr::rmarkdown}
   %\VignetteEncoding{UTF-8}
 ---
@@ -15,11 +15,15 @@ knitr::opts_chunk$set(
   comment = "#>",
   fig.width = 5
 )
+
+options(rmarkdown.html_vignette.check_title = FALSE)
+
 ```
 
 ```{r setup}
 library(parameterpal)
 ```
+
 
 # motivation
 
