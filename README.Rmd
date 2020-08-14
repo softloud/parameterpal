@@ -82,4 +82,4 @@ See `vignette("betapal")` for more information, and the mathematical derivations
 
 # other distributions
 
-No reason the same math can't be applied to other distributions. Open an issue if you'd like me to provide parameters from interpretable conditions for another distributions.
+No reason the same math can't be applied to other distributions. Open an issue if you'd like me to provide parameters from interpretable conditions for another distribution.

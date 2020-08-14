@@ -94,4 +94,4 @@ derivations.
 
 No reason the same math can’t be applied to other distributions. Open an
 issue if you’d like me to provide parameters from interpretable
-conditions for another distributions.
+conditions for another distribution.
