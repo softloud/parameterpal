@@ -5,5 +5,5 @@ within <- 0.2
 # should this be an S3 method
 
 test_that("beta plot makes a plot", {
-  expect_s3_class(beta_plot(expected_value, this_much, within))
+  expect_s3_class(beta_plot(expected_value, this_much, within), "ggplot")
 })
