@@ -20,7 +20,6 @@ LazyData: true
 Roxygen: list(markdown = TRUE)
 RoxygenNote: 7.1.1
 Suggests: 
-    knitr,
     rmarkdown,
     testthat
 VignetteBuilder: knitr
@@ -29,4 +28,5 @@ Imports:
     tibble,
     ggplot2,
     stringr,
-    assertthat
+    assertthat,
+    knitr
