@@ -29,7 +29,7 @@ library(ggplot2)
 
 # motivation
 
-Rather than knowing intrinsically what parameters are required for a distribution, scientists tend to have indirect knowledge. A researcher may have a  sense of what value they *expect* a measure to take, *how many* observations should fall *within* a certain distance of that value. As well as the overall shape of the data, the distribution. Distributions are not defined in the intuitive terms the scientist has, but equational parameters commonly (but not always) $\mu$ and $\sigma$ for the normal distribution, $\lambda$ for the exponential, and $\alpha$ and $\beta$ for the beta d 
+Rather than knowing intrinsically what parameters are required for a distribution, scientists tend to have indirect knowledge. A researcher may have a  sense of what value they *expect* a measure to take, *how many* observations should fall *within* a certain distance of that value. As well as the overall shape of the data, the distribution. Distributions are not defined in the intuitive terms the scientist has, but equational parameters commonly (but not always) $\mu$ and $\sigma$ for the normal distribution, $\lambda$ for the exponential, and $\alpha$ and $\beta$ for the beta distribution. However, calculating the required parameters is not necessarily straightfoward, despite the coniditioning we receive from the normal distribution.
 
 For the normal distribution, obtaining the parameters from these assmptions is straightforward. The expected value and variance, which is to say, centre and spread, of the normal distribution, are both easily interpretable and translate directly to the parameters required for the distribution. So,  to sample three values from a normal distribution where we expect a value of 0.5 with two-thirds of values falling within 0.2 of 0.5, we simply run the following code.
 
@@ -41,7 +41,7 @@ rnorm(n = 3,
 ```
 
 
-But if we wished to sample from beta distribution, however, the parameters, `shape1` and `shape2`, are not readily interpretable from expected value and variance. `parameterpal::` provides a means of obtaining the parameters required  for the beta distribution from interpretable conditions. 
+But if we wished to sample from beta distribution, however, the parameters, `shape1` and `shape2`, are not readily interpretable from expected value and variance.  `parameterpal::` provides a means of obtaining the parameters required  for the beta distribution from interpretable conditions. 
 
 ## beta distribution
 
@@ -112,18 +112,17 @@ within <- 0.2
 
 ggplot() +
   xlim(0, 1) +
-  # why is the shaded area not showing up?
-     geom_rect(
-      Xmin = expected_value - within,
-      XmaX = expected_value + within,
+  geom_rect(
+    aes(
+      xmin = expected_value - within,
+      xmax = expected_value + within,
       ymin = 0,
-      ymaX = Inf,
-      alpha = 0.2
-    ) +
+      ymax = Inf,
+      alpha = 0.2)) +
 stat_function(
   fun = dnorm,
   args = list(mean = expected_value, sd = within)
-)
+) 
 
 
 ```
