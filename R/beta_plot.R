@@ -41,7 +41,8 @@ beta_plot <- function(
       x = NULL,
       caption = stringr::str_wrap(
         paste0(
-          "We assume a beta distribution with expected centre ",
+          "We assume a beta distribution, drawn with a dotted line,
+          with expected centre ",
           expected_value,
           ", illustrated by the vertical dashed line , and ",
           this_much * 100,
@@ -51,7 +52,7 @@ beta_plot <- function(
           expected_value - within,
           ",",
           expected_value + within,
-          "]"
+          "], shown by the shaded region."
         ),
         width = caption_width
       )
