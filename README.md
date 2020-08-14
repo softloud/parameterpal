@@ -87,6 +87,8 @@ beta_plot(
 
 # vignette
 
+> Why doesn’t this work?
+
 See `vignette("betapal")` for more information, and the mathematical
 derivations.
 
