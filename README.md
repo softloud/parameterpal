@@ -74,11 +74,9 @@ cent, which don’t necessarily reflect our intuituion, suppose we thought
 only 30 per cent of values fall within the interval.
 
 ``` r
-beta_plot(
-  expected_value = 0.3,
-         this_much = 0.3,
-         within = 0.2
-)
+beta_plot(expected_value = 0.3,
+          this_much = 0.3,
+          within = 0.2)
 ```
 
 <img src="man/figures/README-unnamed-chunk-6-1.png" width="100%" />
