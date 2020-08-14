@@ -62,11 +62,9 @@ We can plot this intuition to see the shape of the resulting beta
 distribution.
 
 ``` r
-beta_plot(
-  expected_value = 0.3,
-         this_much = 0.8,
-         within = 0.2
-)
+beta_plot(expected_value = 0.3,
+          this_much = 0.8,
+          within = 0.2)
 ```
 
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
