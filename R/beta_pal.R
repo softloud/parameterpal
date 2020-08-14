@@ -8,7 +8,7 @@
 #' Visualise the distribution with [beta_plot].
 #' See `vignette("beta_pal")` for derivations and more information.
 #'
-#' @param expected_value Expected value of beta distrbution from [0,1].
+#' @param expected_value Expected value of beta distrbution from \[0,1\].
 #' @param this_much What proportion falls `within` the specified interval.
 #' @param within Specify distance `this_much` falls within.
 #'

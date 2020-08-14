@@ -7,7 +7,7 @@
 beta_plot(expected_value, this_much, within, caption_width = 70)
 }
 \arguments{
-\item{expected_value}{Expected value of beta distrbution from \link{0,1}.}
+\item{expected_value}{Expected value of beta distrbution from [0,1].}
 
 \item{this_much}{What proportion falls \code{within} the specified interval.}
 

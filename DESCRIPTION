@@ -28,4 +28,5 @@ Imports:
     magrittr,
     tibble,
     ggplot2,
-    stringr
+    stringr,
+    assertthat
