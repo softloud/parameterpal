@@ -83,8 +83,6 @@ beta_plot(expected_value = 0.3,
 
 # vignette
 
-> Why doesn’t this work?
-
 See `vignette("betapal")` for more information, and the mathematical
 derivations.
 
