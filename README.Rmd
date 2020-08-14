@@ -28,8 +28,7 @@ For the normal distribution, this is straightforward, as the parameters reflect 
 ## Installation
 
 ```{r eval=FALSE}
-devtools::install_github("softloud/parameterpal")
-
+devtools::install_github("softloud/parameterpal", build_vignettes = TRUE)
 ```
 
 ## intended user

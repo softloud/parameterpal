@@ -22,6 +22,8 @@ options(rmarkdown.html_vignette.check_title = FALSE)
 
 ```{r setup}
 library(parameterpal)
+library(ggplot2)
+
 ```
 
 
@@ -40,6 +42,27 @@ rnorm(n = 3,
 
 
 But if we wished to sample from beta distribution, however, the parameters, `shape1` and `shape2`, are not readily interpretable from expected value and variance. `parameterpal::` provides a means of obtaining the parameters required  for the beta distribution from interpretable conditions. 
+
+## beta distribution
+
+The beta distribution has some really nice properties. It is bounded by a minimum value of 0 and a maximum of 1, so is perfect for modelling proportions. 
+
+Under some circumstances it can mimic a truncated bell curve, as well as flexibility for other shapes, such as a truncated parabola. 
+
+But this is not intuitive. What shape do we expect $\mathrm{beta}(1,2)$ to take? It's hard to intuit from the parameters 1 and 2. But, we likely do not expect a negatively sloped line.
+
+```{r}
+ggplot() +
+  xlim(0, 1) +
+stat_function(
+  fun = dbeta,
+  args = list(shape1 = 1, shape2 = 2)
+)
+
+
+
+```
+
 
 ### original application
 
@@ -87,8 +110,6 @@ The first parameter is the expected value, and the second, the variance. For the
 expected_value <- 0.5
 within <- 0.2
 
-library(ggplot2)
-
 ggplot() +
   xlim(0, 1) +
   # why is the shaded area not showing up?
@@ -108,6 +129,14 @@ stat_function(
 ```
 
 The beta distribution, on the other hand, requires two shape parameters, `shape1` and `shape2`, which do not immediately reflect our intuition of what value we expect the measure to take, nor how much variance we expect.
+
+```{r echo=FALSE}
+
+
+```
+
+
+Suppose we take parameters 
 
 # derivation 
 
