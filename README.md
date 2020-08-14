@@ -17,8 +17,9 @@ reflect the expected value and variance. However, for the beta
 distribtuion, the parameters are not so readily interpretable.
 
 `parameterpal::` provides a means of obtaining the parameters required
-for the beta distribution from interpretable conditions. \#\#
-Installation
+for the beta distribution from interpretable conditions.
+
+## Installation
 
 ``` r
 devtools::install_github("softloud/parameterpal")
@@ -85,7 +86,7 @@ beta_plot(
 
 # vignette
 
-See `vignette("beta_pal")` for more information, and the mathematical
+See `vignette("betapal")` for more information, and the mathematical
 derivations.
 
 # other distributions

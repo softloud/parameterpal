@@ -23,6 +23,7 @@ Rather than knowing intrinsically what parameters are required for a distributio
 For the normal distribution, this is straightforward, as the parameters reflect the expected value and variance. However, for the beta distribtuion, the parameters are not so readily interpretable. 
 
 `parameterpal::` provides a means of obtaining the parameters required  for the beta distribution from interpretable conditions. 
+
 ## Installation
 
 ```{r eval=FALSE}
@@ -77,7 +78,7 @@ beta_plot(
 
 # vignette
 
-See `vignette("beta_pal")` for more information, and the mathematical derivations.
+See `vignette("betapal")` for more information, and the mathematical derivations.
 
 # other distributions
 
