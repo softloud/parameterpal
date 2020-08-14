@@ -33,7 +33,7 @@ devtools::install_github("softloud/parameterpal")
 
 ## intended user
 
-This package was developed for a friend and collaborator, computational ecologist Dr Matthew Grainger, who previously used browser-based tools to obtain beta parameters to inform his rstats workflow. I hope he finds this package a useful augment to his codeflow. 
+This package was developed for a friend and collaborator, computational ecologist [Dr Matthew Grainger](https://github.com/DrMattG), who previously used browser-based tools to obtain beta parameters to inform his rstats workflow. I hope he finds this package a useful augment to his codeflow. 
 
 # using `parameterpal::` 
 
