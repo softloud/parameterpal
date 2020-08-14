@@ -22,7 +22,7 @@ for the beta distribution from interpretable conditions.
 ## Installation
 
 ``` r
-devtools::install_github("softloud/parameterpal")
+devtools::install_github("softloud/parameterpal", build_vignettes = TRUE)
 ```
 
 ## intended user
