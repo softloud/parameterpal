@@ -12,15 +12,13 @@ test_that("betapal gets correct answers", {
 
   approx_mean <- rbeta(1e5, betapars[[1]], betapars[[2]]) %>% mean()
 
-  approx_mass <- pbeta(q = 0.5, betapars[[1]], betapars[[2]]) - pbeta(q = 0.1, betapars[[1]], betapars[[2]])
+  approx_mass <-
+    pbeta(q = expected_value + within, betapars[[1]], betapars[[2]]) -
+    pbeta(q = expected_value - within, betapars[[1]], betapars[[2]])
 
-  expect_true(
-    abs(approx_mean - expected_value) < 0.2
-    )
+  expect_true(abs(approx_mean - expected_value) < 0.1)
 
-  expect_true(
-    abs(approx_mass - this_much) < 0.2
-    )
+  expect_true(abs(approx_mass - this_much) < 0.1)
 
 
-  })
+})

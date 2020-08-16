@@ -24,6 +24,13 @@ beta_plot <- function(
   # return plot of beta distribution with parameters
   tibble::tibble(x = c(0, 1)) %>%
     ggplot2::ggplot(ggplot2::aes(x = x)) +
+
+    # true quantiles for this distribution
+    geom_vline(
+
+    ) +
+
+    # desired quantiles
     ggplot2::geom_rect(
       xmin = expected_value - within,
       xmax = expected_value + within,
@@ -37,12 +44,12 @@ beta_plot <- function(
     ggplot2::stat_function(
       fun = dbeta,
       linetype = "dotted",
-      args = list(shape1 = par$shape1, shape2 = par$shape2)
+      args = list(shape1 = par$shape1_est, shape2 = par$shape2_est)
     ) +
     ggplot2::labs(
       title = paste0("beta(",
-                     round(par$shape1, 1), ", ",
-                     round(par$shape2, 1), ")"),
+                     round(par$shape1_est, 1), ", ",
+                     round(par$shape2_est, 1), ")"),
       y = NULL,
       x = NULL,
       caption = stringr::str_wrap(

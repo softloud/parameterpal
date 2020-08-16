@@ -74,11 +74,18 @@ beta_plot(expected_value = 0.3,
 
 # vignette
 
-See `vignette("betapal")` for more information. Fully disclosure, I need to update it after I 
-fully understand this [gist](https://gist.github.com/daob/1422e978ff98bdf466fbcb4d9bf3e53e) I was provided with after posting to twitter. Talk about a lesson in open science. Blogpost incoming on open science and why it's good to share bad math and beta research code.
+See `vignette("betapal")` for ~~more information~~ the same information, but from the handy ease of your Rstudio Viewer pane. 
+
+Full disclosure, I need to update it after I 
+fully understand this [gist](https://gist.github.com/daob/1422e978ff98bdf466fbcb4d9bf3e53e) I was provided with after posting to twitter. Talk about a lesson in open science. Blogpost incoming on open science and why it's good to share bad math and beta research code. So cool I've ended up with a better, more mathematically correct solution after posting it. 
 
 
 # other distributions
 
 No reason the same math can't be applied to other distributions. Open an issue if you'd like me to provide parameters from interpretable conditions for another distribution.
+
+# report bugs, suggest improvements
+
+Please do open an issue if you notice something, even if it's just a typo. I'm noticing things I missed all over the shop. 
+
 
