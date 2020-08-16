@@ -4,15 +4,14 @@
 \alias{beta_pal}
 \title{Beta parameters from interpretable conditions}
 \usage{
-beta_pal(expected_value, within, this_much = 0.95)
+beta_pal(expected_value, within, this_much)
 }
 \arguments{
 \item{expected_value}{Expected value of beta distrbution from [0,1].}
 
 \item{within}{Specify distance \code{this_much} falls within.}
 
-\item{this_much}{What proportion falls \code{within} the specified interval.
-Defaults to 0.95.}
+\item{this_much}{What proportion falls \code{within} the specified interval.}
 }
 \value{
 List of parameters appropriate for \link{rbeta} family of functions.
@@ -24,6 +23,9 @@ distribution, scientists tend to have a sense of what value they
 \emph{within} a certain distance of that value.
 }
 \details{
+This solution coded by by this most helpful
+\href{https://gist.github.com/daob/1422e978ff98bdf466fbcb4d9bf3e53e}{gist}.
+
 Visualise the distribution with \link{beta_plot}.
 See \code{vignette("beta_pal")} for derivations and more information.
 }

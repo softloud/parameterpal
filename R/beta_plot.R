@@ -1,7 +1,8 @@
-#' plot the distribution of the proportion allocated to the intervention group
+#' Plot beta distribution
 #'
 #' This function utlises [beta_pal] to produce a visualisation of the beta
 #' distribution, with user-specified interpretable conditions.
+#'
 #'
 #' @inheritParams beta_pal
 #' @param caption_width Option to control the width of the caption, defaults to

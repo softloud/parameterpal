@@ -51,11 +51,11 @@ beta distribution, what are its parameters?
 beta_pal(expected_value = 0.3,
           within = 0.2,
           this_much = 0.8)
-#> $shape1
-#> [1] 7.575
+#> $shape1_est
+#> [1] 2.306909
 #> 
-#> $shape2
-#> [1] 17.675
+#> $shape2_est
+#> [1] 5.382787
 ```
 
 We can plot this intuition to see the shape of the resulting beta
@@ -70,8 +70,9 @@ beta_plot(expected_value = 0.3,
 <img src="man/figures/README-unnamed-chunk-5-1.png" width="100%" />
 
 Escaping the ubiquitous tyranny of the arbitary bounds 90 or 95 per
-cent, which don’t necessarily reflect our intuituion, suppose we thought
-only 30 per cent of values fall within the interval.
+cent, which don’t necessarily reflect our intuition, `this_much` is left
+for the user to define. Suppose we thought only 30 per cent of values
+fall within the interval.
 
 ``` r
 beta_plot(expected_value = 0.3,
@@ -83,8 +84,12 @@ beta_plot(expected_value = 0.3,
 
 # vignette
 
-See `vignette("betapal")` for more information, and the mathematical
-derivations.
+See `vignette("betapal")` for more information. Fully disclosure, I need
+to update it after I fully understand this
+[gist](https://gist.github.com/daob/1422e978ff98bdf466fbcb4d9bf3e53e) I
+was provided with after posting to twitter. Talk about a lesson in open
+science. Blogpost incoming on open science and why it’s good to share
+bad math and beta research code.
 
 # other distributions
 
