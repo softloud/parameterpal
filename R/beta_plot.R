@@ -12,7 +12,7 @@
 beta_plot <- function(
   expected_value,
   within,
-  this_much = 0.95,
+  this_much,
   caption_width = 70) {
   # calculate parameters
   par <-
