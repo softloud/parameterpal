@@ -1,5 +1,5 @@
 ---
-title: "Obtain beta parameters from interpretable conditions."
+title: "Obtain beta parameters from interpretable conditions"
 author: "Charles T. Gray"
 date: "`r Sys.Date()`"
 output: rmarkdown::html_vignette

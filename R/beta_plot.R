@@ -10,11 +10,10 @@
 #'
 #' @export
 
-beta_plot <- function(
-  expected_value,
-  within,
-  this_much,
-  caption_width = 70) {
+beta_plot <- function(expected_value,
+                      within,
+                      this_much,
+                      caption_width = 70) {
   # calculate parameters
   par <-
     beta_pal(expected_value = expected_value,
@@ -24,11 +23,6 @@ beta_plot <- function(
   # return plot of beta distribution with parameters
   tibble::tibble(x = c(0, 1)) %>%
     ggplot2::ggplot(ggplot2::aes(x = x)) +
-
-    # true quantiles for this distribution
-    geom_vline(
-
-    ) +
 
     # desired quantiles
     ggplot2::geom_rect(
@@ -44,30 +38,35 @@ beta_plot <- function(
     ggplot2::stat_function(
       fun = dbeta,
       linetype = "dotted",
-      args = list(shape1 = par$shape1_est, shape2 = par$shape2_est)
+      args = list(
+        shape1 = par$shape1_est,
+        shape2 = par$shape2_est
+      )
     ) +
     ggplot2::labs(
-      title = paste0("beta(",
-                     round(par$shape1_est, 1), ", ",
-                     round(par$shape2_est, 1), ")"),
+      title = sprintf("beta(%.1f, %.1f)",
+                      par$shape1_est,
+                      par$shape2_est),
       y = NULL,
       x = NULL,
-      caption = stringr::str_wrap(
-        paste0(
-          "We assume a beta distribution, drawn with a dotted line,
-          with expected centre ",
-          expected_value,
-          ", illustrated by the vertical dashed line , and ",
-          this_much * 100,
-          " per cent of values falling within ",
-          within,
-          "; i.e, within the interval [",
-          expected_value - within,
-          ",",
-          expected_value + within,
-          "], shown by the shaded region. Parameters in title are rounded."
-        ),
-        width = caption_width
+      caption = sprintf(
+        "Assuming a beta distribution (dotted line), with expected value
+        %g (vertical dashed line), and %g of values falling within %g, we
+        approximate the distribution beta(%g, %g). The parameters in
+        in the title are rounded. The shaded region shows the
+        desired interval %g of values falling within %g. In this approximated
+        distribution, %g of values fall within %g of %g.",
+        expected_value,
+        this_much,
+        within,
+        par$shape1_est,
+        par$shape2_est,
+        this_much,
+        within,
+        pbeta(q = expected_value + within, par$shape1_est, par$shape2_est) -
+          pbeta(q = expected_value - within, par$shape1_est, par$shape2_est),
+        within,
+        expected_value
       )
     ) +
     ggplot2::theme(
