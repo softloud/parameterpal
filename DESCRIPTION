@@ -12,6 +12,9 @@ Authors@R: c(
            role = "aut"),
     person(given = "Matthew",
            family = "Grainger",
+           role = "aut"),
+    person(given = "Matthew",
+           family = "Henderson",
            role = "aut"))
 Description: From the measure we expect, how much we expect yea much of the measure falling within, we interpret beta distribution parameters. 
 License: MIT + file LICENSE
