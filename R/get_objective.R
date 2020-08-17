@@ -1,7 +1,15 @@
 #' Objective function
 #'
 #' Function that takes desrired mean, distance, and probability, and outputs
-#'  another function to be optimized.
+#'  another function to be optimized. Adapted into [beta_pal].
+#'
+#' This solution coded by by this most helpful
+#' [gist](https://gist.github.com/daob/1422e978ff98bdf466fbcb4d9bf3e53e).
+#'
+#'
+#' @param desired_mean expected_value.
+#' @param desired_dist within.
+#' @param desired_mass this_much.
 #'
 #' This function is called by [beta_pal] internally.
 

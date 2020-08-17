@@ -6,10 +6,20 @@
 \usage{
 get_objective(desired_mean, desired_dist, desired_mass)
 }
+\arguments{
+\item{desired_mean}{expected_value.}
+
+\item{desired_dist}{within.}
+
+\item{desired_mass}{this_much.
+
+This function is called by \link{beta_pal} internally.}
+}
 \description{
 Function that takes desrired mean, distance, and probability, and outputs
-another function to be optimized.
+another function to be optimized. Adapted into \link{beta_pal}.
 }
 \details{
-This function is called by \link{beta_pal} internally.
+This solution coded by by this most helpful
+\href{https://gist.github.com/daob/1422e978ff98bdf466fbcb4d9bf3e53e}{gist}.
 }
