@@ -87,7 +87,6 @@ beta_pal(expected_value = usage_example$expected_value,
 
 ```
 
-
 ## motivation
 
 Rather than knowing intrinsically what parameters are required for a distribution, scientists tend to have indirect knowledge. A researcher may have a  sense of what value they *expect* a measure to take, *how many* observations should fall *within* a certain distance of that value. As well as the overall shape of the data, the distribution. Distributions are not defined in the intuitive terms the scientist has, but equational parameters commonly (but not always) $\mu$ and $\sigma$ for the normal distribution, $\lambda$ for the exponential, and $\alpha$ and $\beta$ for the beta distribution. However, calculating the required parameters is not necessarily straightfoward, despite the conditioning we receive from the normal distribution.

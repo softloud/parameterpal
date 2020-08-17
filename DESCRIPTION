@@ -35,5 +35,6 @@ Imports:
     ggplot2,
     stringr,
     assertthat,
-    knitr
+    knitr,
+    ggthemes
 Date: 2020

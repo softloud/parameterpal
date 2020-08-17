@@ -165,7 +165,7 @@ falling within 0.2 of 0.5, we simply run the following code.
 rnorm(n = 3, 
       mean = norm_expected_value,
       sd = norm_within)
-#> [1] 0.3672852 0.5939726 0.1173961
+#> [1] 0.3772879 0.4092443 0.3863862
 ```
 
 The first parameter is the expected value, and the second, the variance.

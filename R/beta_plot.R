@@ -7,13 +7,15 @@
 #' @inheritParams beta_pal
 #' @param caption_width Option to control the width of the caption, defaults to
 #' 70.
+#' @param theme_default Currently defaults to `ggthemes::theme_tufte`.
 #'
 #' @export
 
 beta_plot <- function(expected_value,
                       within,
                       this_much,
-                      caption_width = 70) {
+                      caption_width = 70,
+                      theme_default = TRUE) {
   # calculate parameters
   par <-
     beta_pal(expected_value = expected_value,
@@ -72,7 +74,16 @@ beta_plot <- function(expected_value,
     ggplot2::theme(
       axis.text.y = ggplot2::element_blank(),
       axis.ticks.y = ggplot2::element_blank()
-    )
+    ) -> bplot
 
+    if (isTRUE(theme_default)) {
+      bplot + ggthemes::theme_tufte(base_size = 12) + ggplot2::theme(
+        axis.text.y = ggplot2::element_blank(),
+        axis.ticks.y = ggplot2::element_blank()
+      )
+
+    } else {
+      bplot
+    }
 
 }

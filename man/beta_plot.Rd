@@ -4,7 +4,13 @@
 \alias{beta_plot}
 \title{Plot beta distribution}
 \usage{
-beta_plot(expected_value, within, this_much, caption_width = 70)
+beta_plot(
+  expected_value,
+  within,
+  this_much,
+  caption_width = 70,
+  theme_default = TRUE
+)
 }
 \arguments{
 \item{expected_value}{Expected value of beta distrbution from [0,1].}
@@ -15,6 +21,8 @@ beta_plot(expected_value, within, this_much, caption_width = 70)
 
 \item{caption_width}{Option to control the width of the caption, defaults to
 70.}
+
+\item{theme_default}{Currently defaults to \code{ggthemes::theme_tufte}.}
 }
 \description{
 This function utlises \link{beta_pal} to produce a visualisation of the beta
