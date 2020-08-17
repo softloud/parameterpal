@@ -9,16 +9,22 @@ Authors@R: c(
            comment = c(ORCID = "0000-0002-9978-011X")),
     person(given = "Hien",
            family = "Nguyen",
-           role = "aut"),
+           role = "ctb"),
     person(given = "Matthew",
            family = "Grainger",
-           role = "aut"),
+           role = "ctb"),
     person(given = "Matthew",
            family = "Henderson",
-           role = "aut"),
+           role = "ctb"),
     person(given = "Daniel",
            family = "Oberski",
-           role = "aut"))
+           role = "ctb"),
+    person(given = "Yanina",
+           family = "Saibene",
+           role = "ctb"),
+    person(given = "Laura",
+           family = "Acion",
+           role = "ctb"))
 Description: From the measure we expect, how much we expect yea much of the measure falling within, we interpret beta distribution parameters. 
 License: MIT + file LICENSE
 Encoding: UTF-8
