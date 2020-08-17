@@ -1,0 +1,93 @@
+/******
+This css is based in Allison Horst custom css https://github.com/allisonhorst/explore-na/blob/master/css/custom_css.css
+*******/
+
+body {
+  background-color: #ffffff;
+}
+
+em {
+    color: purple;
+}
+
+.ace-tm {
+    background-color: #ffffff;
+    color: black;
+}
+
+.panel, pre {
+    border-radius: 0;
+    border-color: #e0e0e0;
+    background-color: #ffffff;
+}
+
+.panel-default > .panel-heading {
+    color: #555555;
+    background-color: #ffffff;
+    border-color: #dddddd;
+}
+
+.topicsList .topic {
+    line-height: 40px;
+    font-size: 15px;
+    padding-left: 10px;
+    cursor: pointer;
+    background-repeat: no-repeat;
+    background-size: 2px 80px;
+    background-position: left 100%;
+        background-position-y: 100%;
+    border-bottom: 1px solid purple;
+    -webkit-transition-property: background-position;
+    transition-property: background-position;
+    -webkit-transition-duration: 0.25s;
+    transition-duration: 0.25s;
+}
+
+.topicsList .topic.current {
+    background-color: purple;
+    color: #ffffff;
+    border: 0px;
+}
+
+code {
+    color: gray;
+    background-color: #eee1fc;
+    font-size: 12px;
+}
+
+a {
+    color: purple;
+    text-decoration: none;
+}
+
+.btn-primary, .btn-success, .btn-info {
+    color: #ffffff;
+    background-color: purple;
+    background-image: none;
+    border: none;
+}
+
+.btn-default {
+    color: #ffffff;
+    background-color: purple;
+    background-image: none;
+    border: none;
+}
+
+h2 {
+  color: purple;
+}
+
+h3 {
+  color: purple;
+}
+
+h4 {
+  color: purple;
+}
+
+h5 {
+    color: purple;
+    background-color: white;
+    display: inline-block;
+}
