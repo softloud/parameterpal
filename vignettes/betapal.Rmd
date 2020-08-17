@@ -174,4 +174,10 @@ In this case, given a population $N$, what proportion are allocated to the case 
 
 For example, even if case and control groups were assigned evenly, in experimental science there are many reasons individuals may drop out of the groups. Thus a proportion of $N$ was sampled from a beta distribution (which is bounded between 0 and 1, as proportions are, too), with an intuition of how many drop outs are anticipated.
 
+# citing this package
+
+```{r}
+citation(package = "parameterpal")
+
+```
 

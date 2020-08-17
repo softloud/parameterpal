@@ -1,6 +1,6 @@
 Package: parameterpal
 Title: Intepretable parameters for the beta distribution
-Version: 0.0.0.9000
+Version: 0.0.1
 Authors@R: c(
     person(given = "Charles",
            family = "Gray",
@@ -36,3 +36,4 @@ Imports:
     stringr,
     assertthat,
     knitr
+Date: 2020
