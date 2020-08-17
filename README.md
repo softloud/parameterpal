@@ -33,6 +33,28 @@ previously used browser-based tools to obtain beta parameters to inform
 his rstats workflow. I hope he finds this package a useful augment to
 his codeflow.
 
+# citing this package
+
+``` r
+citation(package = "parameterpal")
+#> Warning in citation(package = "parameterpal"): could not determine year for
+#> 'parameterpal' from package DESCRIPTION file
+#> 
+#> To cite package 'parameterpal' in publications use:
+#> 
+#>   Charles Gray, Hien Nguyen, Matthew Grainger, Matthew Henderson and
+#>   Daniel Oberski (NA). parameterpal: Intepretable parameters for the
+#>   beta distribution. R package version 0.0.1.
+#> 
+#> A BibTeX entry for LaTeX users is
+#> 
+#>   @Manual{,
+#>     title = {parameterpal: Intepretable parameters for the beta distribution},
+#>     author = {Charles Gray and Hien Nguyen and Matthew Grainger and Matthew Henderson and Daniel Oberski},
+#>     note = {R package version 0.0.1},
+#>   }
+```
+
 # vignette
 
 Do you use beta distributions in your science? Do you find the
@@ -87,7 +109,7 @@ beta_plot(expected_value = usage_example$expected_value,
          this_much = usage_example$this_much)
 ```
 
-<img src="man/figures/README-unnamed-chunk-8-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-9-1.png" width="100%" />
 
 Specifying the width enables us to escape the ubiquitous tyranny of the
 arbitary bounds of 95 per cent, which doesn’t necessarily reflect our
@@ -143,7 +165,7 @@ falling within 0.2 of 0.5, we simply run the following code.
 rnorm(n = 3, 
       mean = norm_expected_value,
       sd = norm_within)
-#> [1] 0.7188898 0.2645548 0.7119446
+#> [1] 0.3672852 0.5939726 0.1173961
 ```
 
 The first parameter is the expected value, and the second, the variance.
@@ -152,7 +174,7 @@ know two-thirds of values fall within one standard deviation of the
 mean. If we shade this area in a visualisation, it’s convincing that
 two-thirds of values fall within this range.
 
-<img src="man/figures/README-unnamed-chunk-13-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-14-1.png" width="100%" />
 
 The beta distribution, on the other hand, requires two shape parameters,
 `shape1` and `shape2`, which do not immediately reflect our intuition of
@@ -187,7 +209,7 @@ stat_function(
 )
 ```
 
-<img src="man/figures/README-unnamed-chunk-14-1.png" width="100%" />
+<img src="man/figures/README-unnamed-chunk-15-1.png" width="100%" />
 
 ## original application
 

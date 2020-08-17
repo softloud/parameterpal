@@ -52,7 +52,7 @@ beta_plot <- function(expected_value,
       caption = sprintf(
         "Assuming a beta distribution (dotted line), with expected value
         %g (vertical dashed line), and %g of values falling within %g, we
-        approximate the distribution beta(%g, %g). The parameters in
+        approximate the distribution beta(%g, %g). Parameters in
         in the title are rounded. The shaded region shows the
         desired interval %g of values falling within %g. In this approximated
         distribution, %g of values fall within %g of %g.",
