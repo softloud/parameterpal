@@ -34,6 +34,7 @@ beta_plot <- function(expected_value,
       ymax = Inf,
       alpha = 0.2
     ) +
+
     ggplot2::geom_vline(xintercept = expected_value,
                         linetype = "dashed",
                         alpha = 0.8) +
@@ -52,38 +53,37 @@ beta_plot <- function(expected_value,
       y = NULL,
       x = NULL,
       caption = sprintf(
-        "Assuming a beta distribution (dotted line), with expected value
-        %g (vertical dashed line), and %g of values falling within %g, we
-        approximate the distribution beta(%g, %g). Parameters in
-        in the title are rounded. The shaded region shows the
-        desired interval %g of values falling within %g. In this approximated
-        distribution, %g of values fall within %g of %g.",
+        "Assuming a beta distribution (dotted line), with expected value %g  (vertical dashed line), and %g per cent of falling within %g of %g, parameterpal:: approximates the distribution beta(%g, %g). Parameters in the title are rounded. The shaded region shows the desired region %g per cent of values falling within %g of %g, under the approximated distribution, beta(%g, %g), %g per cent of values fall within this region.",
         expected_value,
-        this_much,
+        this_much * 100,
         within,
+        expected_value,
         par$shape1_est,
         par$shape2_est,
-        this_much,
+        this_much * 100,
         within,
-        pbeta(q = expected_value + within, par$shape1_est, par$shape2_est) -
-          pbeta(q = expected_value - within, par$shape1_est, par$shape2_est),
-        within,
-        expected_value
-      )
+        expected_value,
+        par$shape1_est,
+        par$shape2_est,
+        (
+          pbeta(q = expected_value + within, par$shape1_est, par$shape2_est) -
+            pbeta(q = expected_value - within, par$shape1_est, par$shape2_est)
+        ) * 100
+      ) %>% stringr::str_wrap(width = caption_width)
     ) +
     ggplot2::theme(
       axis.text.y = ggplot2::element_blank(),
       axis.ticks.y = ggplot2::element_blank()
     ) -> bplot
 
-    if (isTRUE(theme_default)) {
-      bplot + ggthemes::theme_tufte(base_size = 12) + ggplot2::theme(
-        axis.text.y = ggplot2::element_blank(),
-        axis.ticks.y = ggplot2::element_blank()
-      )
+  if (isTRUE(theme_default)) {
+    bplot + ggthemes::theme_tufte(base_size = 12) + ggplot2::theme(
+      axis.text.y = ggplot2::element_blank(),
+      axis.ticks.y = ggplot2::element_blank()
+    )
 
-    } else {
-      bplot
-    }
+  } else {
+    bplot
+  }
 
 }
