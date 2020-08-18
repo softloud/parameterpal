@@ -132,7 +132,7 @@ stat_function(
   labs(
     y = NULL,
     title = sprintf("normal(%g, %g)", norm_expected_value, norm_within),
-    caption = sprintf("Two-thirds of normally distributed values fall within %g of %g.", norm_expected_value, norm_within)
+    caption = sprintf("Two-thirds of normally distributed values fall within %g of %g.", norm_within, norm_expected_value)
   )
 
 

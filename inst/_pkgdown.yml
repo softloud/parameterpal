@@ -1,0 +1,11 @@
+home:
+  title: parameterpal
+  description: Beta parameters from interpretable conditions
+
+template:
+  params:
+    bootswatch: sandstone
+  opengraph:
+    twitter:
+      creator: "@cantabile"
+      site: "@MMetaresearch"
