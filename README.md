@@ -23,7 +23,7 @@ for the beta distribution from interpretable conditions.
 
 See this package’s
 [`pkgdown::`](https://pkgdown.r-lib.org/articles/pkgdown.html)-generated
-site for more information.
+[site for more information](https://softloud.github.io/parameterpal/).
 
 ## installation
 

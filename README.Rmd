@@ -27,7 +27,7 @@ For the normal distribution, this is straightforward, as the parameters reflect 
 
 ## documentation
 
-See this package's [`pkgdown::`](https://pkgdown.r-lib.org/articles/pkgdown.html)-generated site for more information.
+See this package's [`pkgdown::`](https://pkgdown.r-lib.org/articles/pkgdown.html)-generated [site for more information](https://softloud.github.io/parameterpal/).
 
 ## installation
 
