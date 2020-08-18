@@ -19,17 +19,27 @@ distribution, the parameters are not so readily interpretable.
 `parameterpal::` provides a means of obtaining the parameters required
 for the beta distribution from interpretable conditions.
 
-## documentation
-
-See this package’s
-[`pkgdown::`](https://pkgdown.r-lib.org/articles/pkgdown.html)-generated
-[site for more information](https://softloud.github.io/parameterpal/).
-
 ## installation
 
 ``` r
 devtools::install_github("softloud/parameterpal", build_vignettes = TRUE)
 ```
+
+## launch tutorial
+
+After installation, the `parameterpal::` tutorial will be available in
+the Tutorial pane of Rstudio.
+
+``` r
+# executing this code will launch the tutorial in your browser
+learnr::run_tutorial("ppalhelp", package = "parameterpal")
+```
+
+## documentation
+
+See this package’s
+[`pkgdown::`](https://pkgdown.r-lib.org/articles/pkgdown.html)-generated
+[site for more information](https://softloud.github.io/parameterpal/).
 
 ## intended user
 
