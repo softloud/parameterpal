@@ -67,3 +67,9 @@ posting it.
 No reason the same math can’t be applied to other distributions. Open an
 issue if you’d like me to provide parameters from interpretable
 conditions for another distribution.
+
+# development on hold
+
+Currently softloud is finishing her dissertation, and with it so close,
+she’s focussed on wrapping that up before extending any software beyond
+what’s required for the thesis.

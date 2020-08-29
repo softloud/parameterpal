@@ -78,7 +78,7 @@
       <h1 data-toc-skip>Obtain beta parameters from interpretable conditions</h1>
                         <h4 class="author">Charles T. Gray</h4>
             
-            <h4 class="date">2020-08-18</h4>
+            <h4 class="date">2020-08-29</h4>
       
       
       <div class="hidden name"><code>betapal.Rmd</code></div>
@@ -142,7 +142,7 @@
 <div class="sourceCode" id="cb9"><html><body><pre class="r"><span class="fu"><a href="https://rdrr.io/r/stats/Normal.html">rnorm</a></span>(<span class="kw">n</span> <span class="kw">=</span> <span class="fl">3</span>,
       <span class="kw">mean</span> <span class="kw">=</span> <span class="no">norm_expected_value</span>,
       <span class="kw">sd</span> <span class="kw">=</span> <span class="no">norm_within</span>)
-<span class="co">#&gt; [1] 0.4471843 0.3483113 0.7989135</span></pre></body></html></div>
+<span class="co">#&gt; [1] 0.1499015 0.1982818 0.2273453</span></pre></body></html></div>
 <p>The first parameter is the expected value, and the second, the variance. For the normal distribution, the standard deviation is interpretable. We know two-thirds of values fall within one standard deviation of the mean. If we shade this area in a visualisation, it’s convincing that two-thirds of values fall within this range.</p>
 <div class="sourceCode" id="cb10"><html><body><pre class="r">
 <span class="fu"><a href="https://rdrr.io/r/base/library.html">library</a></span>(<span class="no">ggplot2</span>)
